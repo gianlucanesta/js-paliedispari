@@ -7,7 +7,7 @@
 
 // L'utente sceglie pari o dispari
 
- let userEvenOrOdd;
+let userEvenOrOdd;
     
 while ((userEvenOrOdd !== 'pari') || (userEvenOrOdd !== 'dispari')) {
     // Chiedo all'utente di scegliere tra pari o dispari
@@ -47,7 +47,7 @@ let playerNumber = '';
 
 
 
-const cpuNumber = computerNumber();
+const cpuNumber = computerNumber(1, 5);
 
 const totalResult = sumPlayerVsCpu(playerNumber, cpuNumber);
 
@@ -59,8 +59,8 @@ if (userEvenOrOdd === totalResult)  {
     
 
 // // Funzione che genera un numero random per simulare la scelta del computer
-function computerNumber(){
-    const randomNumber = Math.floor(Math.random() * 5) + 1;
+function computerNumber(min, max){
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) ) + 1;
     
     alert(`Il computer ha scelto ${randomNumber}`);
     return randomNumber;
